@@ -100,7 +100,7 @@ The Terraform backend is defined in [the `backend.tf` file](./backend.tf) and us
 S3 state files often contain sensitive data.
 Consider enabling server-side encryption and versioning for the S3 bucket.
 
-## Infrastructure of the deployment
+## Deployment architecture
 
 High-level architecture created by this Terraform project:
 
@@ -113,6 +113,8 @@ High-level architecture created by this Terraform project:
 - A security group that allows inbound SSH (22) and HTTP (80) from anywhere (0.0.0.0/0) and allows all outbound traffic.
 
 - Two EC2 instances launched in the public subnets using the provided AMI (`ami_id`) and instance type (`instance_type`). Instances receive a public IP and use the security group for SSH/HTTP.
+
+![Architecture Diagram](./images/architecture.png)
 
 ## Trade-offs and enhancements
 
